@@ -2,7 +2,9 @@
 Install docker  xfce 📱💻
 
 
+git clone https://github.com/hozoowhitehat/uphy
 
+cd uphy
 
 docker run --rm -p 8080:8080 \
   -v /tmp/pulse:/tmp/pulse \
