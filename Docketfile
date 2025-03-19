@@ -1,0 +1,16 @@
+FROM uphy/ubuntu-desktop-jp:20.04
+
+# Install necessary packages
+RUN apt-get update && apt-get install -y pulseaudio
+
+# Start PulseAudio
+RUN pulseaudio --start
+
+# Expose the necessary port
+EXPOSE 8080
+
+# Copy your noVNC files into the container
+COPY noVNC /usr/share/noVNC
+
+# Start noVNC
+CMD ["webrtc", "--listen", "0.0.0.0", "--port", "8080"]
